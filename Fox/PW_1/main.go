@@ -68,14 +68,14 @@ func main() {
 		Client: http.Client{Timeout: 75 * time.Second},
 	}
 
-	// 1. Послідовне опитування
+	
 	seqStart := time.Now()
 	for _, u := range urls {
 		_ = checker.Check(u)
 	}
 	seqDuration := time.Since(seqStart)
 
-	// 2 & 3. Паралельне опитування через горутини та канали
+	
 	fmt.Println("=== HTTP URL Health Checker ===")
 	fmt.Println("\n[Конкурентна перевірка адрес...]")
 
@@ -115,7 +115,7 @@ func main() {
 	}
 	concDuration := time.Since(concStart)
 
-	// Підсумковий звіт
+	
 	fmt.Println("\n==========================================")
 	fmt.Println("ПІДСУМКОВИЙ ЗВІТ МОНІТОРИНГУ:")
 	fmt.Printf("- Усього перевірено адрес: %d\n", stats.Total)
