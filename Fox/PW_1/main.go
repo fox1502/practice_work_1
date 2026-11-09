@@ -7,6 +7,9 @@ import (
 	"time"
 )
 
+
+прпоп
+
 type Result struct {
 	URL        string
 	StatusCode int
